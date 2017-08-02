@@ -20,7 +20,9 @@ defmodule Sling.Mixfile do
   def application do
     [
       mod: {Sling, []},
-      extra_applications: [:logger]
+      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
+                  :phoenix_ecto, :postgrex, :comeonin] # :comeonin added here
+      #extra_applications: [:logger]
     ]
   end
 
@@ -37,8 +39,12 @@ defmodule Sling.Mixfile do
       {:phoenix_pubsub, "~> 1.0"},
       {:phoenix_ecto, "~> 3.2"},
       {:postgrex, ">= 0.0.0"},
+      {:phoenix_html, "~> 2.6"},
+      {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:comeonin, "~> 2.5"}, # :comeonin added here
+      {:guardian, "~> 0.14"}
     ]
   end
 

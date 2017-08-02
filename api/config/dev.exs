@@ -1,4 +1,4 @@
-use Mix.Config
+mix phoenix.gen.secretuse Mix.Config
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -42,3 +42,9 @@ config :sling, Sling.Repo,
   database: "sling_dev",
   hostname: "localhost",
   pool_size: 10
+
+# Configure Guardian
+config :guardian, Guardian,
+  secret_key: "LG17BzmhBeq81Yyyn6vH7GVdrCkQpLktol2vdXlBzkRRHpYsZwluKMG9r6fnu90m"
+
+import_config "dev.secret.exs"
