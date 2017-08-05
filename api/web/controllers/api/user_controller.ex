@@ -1,4 +1,4 @@
-# defmodule Sling.UserController do
+defmodule Sling.UserController do
   use Sling.Web, :controller
 
   alias Sling.User
